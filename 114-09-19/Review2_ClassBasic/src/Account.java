@@ -10,8 +10,12 @@ public class Account {
      * @param initialBalance 初始餘額
      */
     public Account(String accountNumber, double initialBalance) {
-        this.accountNumber = accountNumber;
-        this.balance = initialBalance;
+        this.setAccountNumber(accountNumber);
+        try {
+            this.setBalance(initialBalance);
+        } catch (IllegalArgumentException e) {
+            System.out.println("初始餘額錯誤: " + e.getMessage() + "，將餘額設為0");
+        }
     }
 
     /**
@@ -28,6 +32,27 @@ public class Account {
      */
     public double getBalance() {
         return balance;
+    }
+
+    /**
+     * 設定帳戶餘額
+     * @param balance 欲設定的帳戶餘額，必須為正數
+     * @throws IllegalArgumentException 若餘額非正數則拋出例外
+     */
+    public void setBalance(double balance) {
+        if (balance > 0) {
+            this.balance = balance; // 設定新的帳戶餘額
+        } else {
+            throw new IllegalArgumentException("帳戶餘額必須為正數");
+        }
+    }
+
+   /**
+     * 設定帳戶號碼
+     * @param accountNumber 欲設定的帳戶號碼
+     */
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
     }
 
     /**
