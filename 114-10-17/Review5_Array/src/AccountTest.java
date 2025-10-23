@@ -10,7 +10,7 @@ public class AccountTest {
         addCustomer(customers,  acc3);
 
         // 顯示所有客戶帳戶資訊
-        System.out.println("\n所有客戶帳戶資訊:");
+        System.out.println("\n所有位客戶帳戶資訊:");
         printCustomerAccounts(customers);
     }
 
