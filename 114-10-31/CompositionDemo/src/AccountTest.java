@@ -1,15 +1,16 @@
+// 檔案路徑: c:\Users\m306\Desktop\114_1_Java\114-10-31\CompositionDemo\src\AccountTest.java
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class AccountTest {
     public static void main(String[] args) {
-        List<Account> customers = new ArrayList<>(); // 儲存客戶帳戶的List
-        Account acc1 = new Account("A001", "Alice", 5000);
+        List<Account> customers = new ArrayList<>(); // 儲存客戶帳戶的清單
+        Account acc1 = new Account("A001", "Alice", "A12345678", 5000);
         addCustomer(customers, acc1);
-        Account acc2 = new Account("A002", "Bob", 3000);
+        Account acc2 = new Account("A002", "Bob", "A33334444", 3000);
         addCustomer(customers, acc2);
-        Account acc3 = new Account("A003", "Charlie", -100);
+        Account acc3 = new Account("A003", "Charlie","B44448888", -100);
         addCustomer(customers,  acc3);
 
         operation(customers);
@@ -99,9 +100,7 @@ public class AccountTest {
             System.out.println("無法列印帳戶資訊，帳戶不存在");
             return;
         }
-        System.out.println("帳戶號碼: " + account.getAccountNumber() +
-                ", 持有人: " + account.getOwnerName() +
-                ", 餘額: " + account.getBalance());
+        System.out.println(account.toString());
     }
 
     // 功能選單 (1) 新增客戶 (2) 列印指定客戶帳戶資訊 (3) 顯示所有客戶帳戶資訊 (4) 刪除客戶帳戶 (5) 離開
