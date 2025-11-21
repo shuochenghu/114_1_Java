@@ -9,8 +9,21 @@ public class RPG {
 
         ShieldSwordsMan shieldSwordsMan = new ShieldSwordsMan("持盾劍士", 120, 18, 8);
 
-        // 遊戲角色陣列
         Role[] gameRoles = {swordsMan_light, swordsMan_dark, magician_light, magician_dark, shieldSwordsMan};
+
+        // ========== 第一階段新增：展示所有角色的特殊技能 ==========
+        System.out.println("════════════════════════════════════════");
+        System.out.println("          角色特殊技能展示");
+        System.out.println("════════════════════════════════════════");
+        System.out.println();
+        
+        for (Role role : gameRoles) {
+            role.showSpecialSkill();
+            System.out.println();
+        }
+
+        System.out.println("════════════════════════════════════════");
+        System.out.println();
 
         // 戰鬥過程
         System.out.println("戰鬥開始！");
